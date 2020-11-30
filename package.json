@@ -1,11 +1,15 @@
 {
-  "name": "backend-project-lvl1",
+  "name": "brain-games",
   "version": "1.0.0",
   "description": "",
   "main": "bin/brain-games.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azbykov/backend-project-lvl1.git"
