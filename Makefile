@@ -7,3 +7,9 @@ brain-games: # Запуск игры
 
 publish: # Публикация проекта
 	npm publish --dry-run
+
+lint: # Проверка eslint
+	npx eslint .
+
+#test-coverage:
+	#npm test -- --coverage --coverageProvider=v8
