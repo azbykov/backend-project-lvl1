@@ -10,3 +10,6 @@ publish: # Публикация проекта
 
 lint: # Проверка eslint
 	npx eslint .
+
+#test-coverage:
+	#npm test -- --coverage --coverageProvider=v8
