@@ -5,6 +5,9 @@ install: # установить зависимости
 brain-games: # Запуск игры
 	node bin/brain-games.js
 
+brain-even: # Запуск игры
+	node bin/brain-even.js
+
 publish: # Публикация проекта
 	npm publish --dry-run
 
