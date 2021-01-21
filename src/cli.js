@@ -9,7 +9,7 @@ const getUserGreeting = () => {
 
 const getUserNumberAnswer = (num) => {
   console.log(`Question: ${num}`);
-  const answer = readlineSync.question(`Your answer:`);
+  const answer = readlineSync.question('Your answer:');
 
   return answer;
 };
