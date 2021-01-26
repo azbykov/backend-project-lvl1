@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import getRandomNum from '../src/utils.js';
+import {getRandomNum} from '../src/utils.js';
 import gameRun from '../src/engine.js';
 
 const getParams = () => {

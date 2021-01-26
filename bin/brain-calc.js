@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import gameRun from '../src/engine.js';
-import getRandomNum from '../src/utils.js';
+import {getRandomNum} from '../src/utils.js';
 
 const OPERATORS = ['+', '-', '*', '/'];
 
