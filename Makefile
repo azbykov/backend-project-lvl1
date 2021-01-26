@@ -8,6 +8,12 @@ brain-games: # Запуск игры
 brain-even: # Запуск игры
 	node bin/brain-even.js
 
+brain-calc: # Запуск игры
+	node bin/brain-calc.js
+
+brain-gcd: # Запуск игры
+	node bin/brain-gcd.js
+
 publish: # Публикация проекта
 	npm publish --dry-run
 

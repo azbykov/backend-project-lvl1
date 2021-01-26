@@ -2,14 +2,14 @@ import {getUserNumberAnswer, getUserGreeting} from './cli.js';
 
 const MAX_POINTS = 3;
 
-const gameRun = ({greeting, getParams}) => {
+const gameRun = ({greeting, getParams}, maxPoints = MAX_POINTS) => {
   console.log('Welcome to the Brain Games!');
 
   const username = getUserGreeting();
 
   console.log(greeting);
 
-  for (let i = 0; i < MAX_POINTS; i += 1) {
+  for (let i = 0; i < maxPoints; i += 1) {
     const {question, answer} = getParams();
     const userAnswer = getUserNumberAnswer(question);
 
