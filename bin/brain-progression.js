@@ -3,6 +3,7 @@ import gameRun from '../src/engine.js';
 import {getRandomNum} from '../src/utils.js';
 
 const DEFAULT_LENGTH = 10;
+const GREETING_TEXT = 'What number is missing in the progression?';
 
 const getParams = () => {
   let start = getRandomNum(0, DEFAULT_LENGTH);
@@ -25,5 +26,4 @@ const getParams = () => {
   };
 };
 
-const greeting = 'What number is missing in the progression?';
-gameRun({greeting, getParams});
+gameRun({greeting: GREETING_TEXT, getParams});
