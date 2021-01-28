@@ -8,7 +8,7 @@ const getParams = () => {
 
   return {
     question: `${a} ${b}`,
-    answer: getGcd(a, b).toString(),
+    answer: getGcd(a, b),
   };
 };
 

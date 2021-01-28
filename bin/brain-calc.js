@@ -17,7 +17,7 @@ const getParams = () => {
   const operator = OPERATORS[getRandomNum(0, 3)];
   return {
     question: `${a} ${operator} ${b}`,
-    answer: ACTION[operator](a, b).toString(),
+    answer: ACTION[operator](a, b),
   };
 };
 

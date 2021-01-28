@@ -14,6 +14,9 @@ brain-calc: # Запуск игры
 brain-gcd: # Запуск игры
 	node bin/brain-gcd.js
 
+brain-progression: # Запуск игры
+	node bin/brain-progression.js
+
 publish: # Публикация проекта
 	npm publish --dry-run
 
