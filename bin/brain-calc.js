@@ -2,6 +2,7 @@
 import gameRun from '../src/engine.js';
 import {getRandomNum} from '../src/utils.js';
 
+const GREETING_TEXT = 'What is the result of the expression?';
 const OPERATORS = ['+', '-', '*', '/'];
 
 const ACTION = {
@@ -21,5 +22,4 @@ const getParams = () => {
   };
 };
 
-const greeting = 'What is the result of the expression?';
-gameRun({greeting, getParams});
+gameRun({greeting: GREETING_TEXT, getParams});
