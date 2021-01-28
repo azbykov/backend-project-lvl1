@@ -13,7 +13,7 @@ const gameRun = ({greeting, getParams}, maxPoints = MAX_POINTS) => {
     const {question, answer} = getParams();
     const userAnswer = getUserNumberAnswer(question);
 
-    if (userAnswer === answer) {
+    if (userAnswer === answer.toString()) {
       console.log('Correct!');
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
