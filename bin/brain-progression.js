@@ -4,13 +4,6 @@ import {getRandomNum} from '../src/utils.js';
 
 const DEFAULT_LENGTH = 10;
 
-const ACTION = {
-  '+': (a, b) => a + b,
-  '-': (a, b) => a - b,
-  '*': (a, b) => a * b,
-  '/': (a, b) => a / b,
-};
-
 const getParams = () => {
   let start = getRandomNum(0, DEFAULT_LENGTH);
   const step = getRandomNum(1, DEFAULT_LENGTH);
