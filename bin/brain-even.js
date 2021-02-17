@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {getRandomNum} from '../src/utils.js';
+import { getRandomNum } from '../src/utils.js';
 import gameRun from '../src/engine.js';
 
 const GREETING_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -13,4 +13,4 @@ const getParams = () => {
   };
 };
 
-gameRun({greeting: GREETING_TEXT, getParams});
+gameRun({ greeting: GREETING_TEXT, getParams });
