@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import gameRun from '../src/engine.js';
-import {getRandomNum, isPrime} from '../src/utils.js';
+import { getRandomNum, isPrime } from '../src/utils.js';
 
 const GREETING_TEXT = '"yes" if given number is prime. Otherwise answer "no"';
 
@@ -13,4 +13,4 @@ const getParams = () => {
   };
 };
 
-gameRun({greeting: GREETING_TEXT, getParams});
+gameRun({ greeting: GREETING_TEXT, getParams });
