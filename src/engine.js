@@ -2,8 +2,9 @@ import readlineSync from 'readline-sync';
 
 const MAX_POINTS = 3;
 
-export default ({ greeting, getParams }, maxPoints = MAX_POINTS) => {
+const gameRun = ({ greeting, getParams }, maxPoints = MAX_POINTS) => {
   console.log('Welcome to the Brain Games!');
+
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}!`);
 
@@ -25,3 +26,5 @@ export default ({ greeting, getParams }, maxPoints = MAX_POINTS) => {
   }
   console.log(`Congratulations, ${username}!`);
 };
+
+export default gameRun;
