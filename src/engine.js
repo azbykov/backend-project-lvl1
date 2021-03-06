@@ -1,17 +1,20 @@
-import { getUserNumberAnswer, getUserGreeting } from './cli.js';
+import readlineSync from 'readline-sync';
 
 const MAX_POINTS = 3;
 
 const gameRun = ({ greeting, getParams }, maxPoints = MAX_POINTS) => {
   console.log('Welcome to the Brain Games!');
 
-  const username = getUserGreeting();
+  const username = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${username}!`);
 
   console.log(greeting);
 
   for (let i = 0; i < maxPoints; i += 1) {
     const { question, answer } = getParams();
-    const userAnswer = getUserNumberAnswer(question);
+
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer:');
 
     if (userAnswer === answer.toString()) {
       console.log('Correct!');
