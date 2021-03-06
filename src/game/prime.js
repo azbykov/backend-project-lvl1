@@ -1,0 +1,24 @@
+import { getRandomNum } from '../utils.js';
+import gameRun from '../engine.js';
+
+const GREETING_TEXT = '"yes" if given number is prime. Otherwise answer "no"';
+
+const isPrime = (num) => {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return num > 1;
+};
+
+const getParams = () => {
+  const number = getRandomNum(0, 20);
+
+  return {
+    question: `${number}`,
+    answer: isPrime(number) ? 'yes' : 'no',
+  };
+};
+
+export default () => gameRun({ greeting: GREETING_TEXT, getParams });
