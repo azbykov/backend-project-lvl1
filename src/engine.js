@@ -1,17 +1,17 @@
 import readlineSync from 'readline-sync';
 
-const MAX_POINTS = 3;
+const DEFAULT_POINT_COUNT = 3;
 
-const gameRun = ({ greeting, getParams }, maxPoints = MAX_POINTS) => {
+const gameRun = (gameRuleText, getGameSettings) => {
   console.log('Welcome to the Brain Games!');
 
   const username = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${username}!`);
 
-  console.log(greeting);
+  console.log(gameRuleText);
 
-  for (let i = 0; i < maxPoints; i += 1) {
-    const { question, answer } = getParams();
+  for (let i = 0; i < DEFAULT_POINT_COUNT; i += 1) {
+    const { question, answer } = getGameSettings();
 
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer:');

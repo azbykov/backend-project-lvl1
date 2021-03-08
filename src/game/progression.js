@@ -1,28 +1,29 @@
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../get-random-num.js';
 import gameRun from '../engine.js';
 
-const DEFAULT_LENGTH = 10;
-const GREETING_TEXT = 'What number is missing in the progression?';
+const DEFAULT_MAX_COUNT = 10;
+const DEFAULT_MAX_STEP_COUNT = 100;
+const GAME_RULE_TEXT = 'What number is missing in the progression?';
 
-const getParams = () => {
-  let start = getRandomNum(0, DEFAULT_LENGTH);
-  const step = getRandomNum(1, DEFAULT_LENGTH);
-  const missing = getRandomNum(0, DEFAULT_LENGTH - 1);
-  const acc = [start];
+const getGameSettings = () => {
+  const start = getRandomNum(0, DEFAULT_MAX_STEP_COUNT);
+  const step = getRandomNum(1, DEFAULT_MAX_STEP_COUNT);
+  const missingElement = getRandomNum(0, DEFAULT_MAX_COUNT - 1);
+  const result = [];
 
-  for (let i = 1; i < DEFAULT_LENGTH; i += 1) {
-    start += step;
-    acc.push(start);
+  for (let i = 0; i < DEFAULT_MAX_COUNT; i += 1) {
+    const value = start + step * i;
+    result.push(value);
   }
 
-  const answer = acc[missing];
+  const answer = result[missingElement];
 
-  acc[missing] = '..';
+  result[missingElement] = '..';
 
   return {
     answer,
-    question: `${acc.join(' ')}`,
+    question: `${result.join(' ')}`,
   };
 };
 
-export default () => gameRun({ greeting: GREETING_TEXT, getParams });
+export default () => gameRun(GAME_RULE_TEXT, getGameSettings);

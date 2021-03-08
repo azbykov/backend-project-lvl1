@@ -1,7 +1,7 @@
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../get-random-num.js';
 import gameRun from '../engine.js';
 
-const GREETING_TEXT = '"yes" if given number is prime. Otherwise answer "no"';
+const GAME_RULE_TEXT = '"yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
@@ -12,13 +12,13 @@ const isPrime = (num) => {
   return num > 1;
 };
 
-const getParams = () => {
+const getGameSettings = () => {
   const number = getRandomNum(0, 20);
 
   return {
-    question: `${number}`,
+    question: number.toString(),
     answer: isPrime(number) ? 'yes' : 'no',
   };
 };
 
-export default () => gameRun({ greeting: GREETING_TEXT, getParams });
+export default () => gameRun(GAME_RULE_TEXT, getGameSettings);
