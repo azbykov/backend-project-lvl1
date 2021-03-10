@@ -1,23 +1,23 @@
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../get-random-num.js';
 import gameRun from '../engine.js';
 
-const GREETING_TEXT = 'What is the result of the expression?';
-const OPERATORS = ['+', '-', '*'];
+const GAME_RULE_TEXT = 'What is the result of the expression?';
 
-const ACTION = {
+const ACTIONS = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
   '*': (a, b) => a * b,
 };
 
-const getParams = () => {
+const getGameSettings = () => {
   const a = getRandomNum();
   const b = getRandomNum();
-  const operator = OPERATORS[getRandomNum(0, OPERATORS.length - 1)];
+  const operators = Object.keys(ACTIONS);
+  const selectedOperator = operators[getRandomNum(0, operators.length - 1)];
   return {
-    question: `${a} ${operator} ${b}`,
-    answer: ACTION[operator](a, b),
+    question: `${a} ${selectedOperator} ${b}`,
+    answer: ACTIONS[selectedOperator](a, b),
   };
 };
 
-export default () => gameRun({ greeting: GREETING_TEXT, getParams });
+export default () => gameRun(GAME_RULE_TEXT, getGameSettings);

@@ -1,9 +1,9 @@
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../get-random-num.js';
 import gameRun from '../engine.js';
 
-const GREETING_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".';
+const GAME_RULE_TEXT = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getParams = () => {
+const getGameSettings = () => {
   const number = getRandomNum();
 
   return {
@@ -12,4 +12,4 @@ const getParams = () => {
   };
 };
 
-export default () => gameRun({ greeting: GREETING_TEXT, getParams });
+export default () => gameRun(GAME_RULE_TEXT, getGameSettings);

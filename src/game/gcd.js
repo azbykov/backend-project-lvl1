@@ -1,7 +1,7 @@
-import { getRandomNum } from '../utils.js';
+import getRandomNum from '../get-random-num.js';
 import gameRun from '../engine.js';
 
-const GREETING_TEXT = 'Find the greatest common divisor of given numbers.';
+const GAME_RULE_TEXT = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (a, b) => {
   if (b) {
@@ -10,7 +10,7 @@ const getGcd = (a, b) => {
   return Math.abs(a);
 };
 
-const getParams = () => {
+const getGameSettings = () => {
   const a = getRandomNum();
   const b = getRandomNum();
 
@@ -20,4 +20,4 @@ const getParams = () => {
   };
 };
 
-export default () => gameRun({ greeting: GREETING_TEXT, getParams });
+export default () => gameRun(GAME_RULE_TEXT, getGameSettings);
